@@ -23,8 +23,8 @@ namespace NXGNAssignment
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddTransient<IMovieProvider>(m => new MovieProvider(@"Password=S3ns3i2;Persist Security Info=True;User ID=sum;Initial Catalog=SysMovieStore;Data Source=LEBONE\MSSQLSERVER2012"));
-            //services.AddTransient<IMovieProvider>(m => new MovieProvider(@"Password=2454Online;Persist Security Info=True;User ID=elovatio_lebone;Initial Catalog=elovatio_movie;Data Source=plesk-sql01.hkdns.co.za"));
+            //services.AddTransient<IMovieProvider>(m => new MovieProvider(@"Password=S3ns3i2;Persist Security Info=True;User ID=sum;Initial Catalog=SysMovieStore;Data Source=LEBONE\MSSQLSERVER2012"));
+            services.AddTransient<IMovieProvider>(m => new MovieProvider(@"Password=2454Online;Persist Security Info=True;User ID=elovatio_lebone;Initial Catalog=elovatio_movie;Data Source=plesk-sql01.hkdns.co.za"));
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

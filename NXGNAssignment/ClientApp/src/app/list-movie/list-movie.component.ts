@@ -12,14 +12,10 @@ import { setTimeout } from 'timers';
 
 export class ListMovieComponent implements OnInit{
 
-
-
   Movie: any = [];
   public tableWidget: any;
 
-  constructor(
-    public restApi: RestApi
-  ) {
+  constructor(public restApi: RestApi) {
     this.loadMovies(); this.initDatatable();
   }
 
@@ -29,9 +25,7 @@ export class ListMovieComponent implements OnInit{
 
 
   ngAfterViewInit() {
-    
     this.initDatatable();
-    
   }
 
   
@@ -39,7 +33,8 @@ export class ListMovieComponent implements OnInit{
   private initDatatable(): void {
     this.loadMovies();
     const exampleId: any = $('#example');
-    this.tableWidget = exampleId.DataTable(this.Movie);
+    this.tableWidget = exampleId.DataTable({
+      "order": [[3, 'asc']]});
   }
 
   
